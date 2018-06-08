@@ -12,6 +12,7 @@ export class IndexListScrollComponent extends BetterScrollDirective {
     constructor(ele: ElementRef, injector: Injector, betterManagerService: BetterManagerService) {
         super(ele, injector, betterManagerService);
         this.click = true;
+        this.probeType = 3;
         this.getCyc('betterScrollInited').subscribe(res => {
             this.updateStyle();
         });
