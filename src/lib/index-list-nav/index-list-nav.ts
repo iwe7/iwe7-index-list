@@ -15,27 +15,8 @@ export class IndexListNavComponent extends Iwe7CoreComponent {
     currentIndex: BehaviorSubject<number> = new BehaviorSubject(0);
     _indexListScrollComponent: IndexListScrollComponent;
 
-    scrollStartFn: any = (res: any) => {
-        this.setCyc('scrollStart', res, true);
-    }
     scrollFn: any = (res: any) => {
         this.setCyc('scroll', res, true);
-    }
-    scrollCancelFn: any = (res: any) => {
-        this.setCyc('scrollCancel', res, true);
-    }
-    scrollEndFn: any = (res: any) => {
-        this.setCyc('scrollEnd', res, true);
-    }
-    touchEndFn: any = (res: any) => {
-        this.setCyc('touchEnd', res, true);
-    }
-    beforeScrollStartFn: any = (res: any) => {
-        this.setCyc('beforeScrollStart', res, true);
-    }
-
-    flickFn: any = (res: any) => {
-        this.setCyc('flick', res, true);
     }
 
     touchstartFn: any = (res: any) => {
@@ -47,13 +28,7 @@ export class IndexListNavComponent extends Iwe7CoreComponent {
         if (val) {
             val.scrollInstance.subscribe(res => {
                 this._scroll = res;
-                this._scroll.on('beforeScrollStart', this.beforeScrollStartFn);
-                this._scroll.on('touchEnd', this.touchEndFn);
-                this._scroll.on('scrollEnd', this.scrollEndFn);
-                this._scroll.on('scrollCancel', this.scrollCancelFn);
                 this._scroll.on('scroll', this.scrollFn);
-                this._scroll.on('scrollStart', this.scrollStartFn);
-                this._scroll.on('flick', this.flickFn);
                 this._scroll.on('touchstart', this.touchstartFn);
             });
             this._indexListScrollComponent = val;
