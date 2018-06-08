@@ -1,0 +1,3 @@
+<ul>
+  <li *ngFor="let item of nav.change|async" (click)="onNav($event,item)" class="active">{{item.data}}</li>
+</ul>

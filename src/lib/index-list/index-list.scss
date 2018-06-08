@@ -1,0 +1,13 @@
+.scroll-y {
+  position: relative;
+  index-list {
+    display: block;
+  }
+}
+
+index-list {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
