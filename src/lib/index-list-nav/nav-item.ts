@@ -1,4 +1,4 @@
-import { OnInit, Directive, Input, ElementRef, HostBinding, Renderer2 } from '@angular/core';
+import { OnInit, Directive, Input, ElementRef, Renderer2 } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Directive({
